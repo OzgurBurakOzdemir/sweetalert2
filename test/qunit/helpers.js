@@ -2,6 +2,11 @@ const { detect } = require('detect-browser')
 
 const browser = detect()
 
+export const $ = document.querySelector.bind(document)
+
+export const isHidden = (el) => el.classList.contains('hidden')
+export const isVisible = (el) => !el.classList.contains('hidden')
+
 export let TIMEOUT = 1
 
 if (browser.name === 'ie') {
